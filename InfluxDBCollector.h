@@ -19,7 +19,7 @@ Address:<br>
 <small><em>like 'http://192.168.0.1:8086'</em></small><br><br>
 Database:<br>
 <input type="text" name="ifx_db" value="%s"><br>
-<small><em>WiFi network to connect to</em></small><br><br>
+<small><em>database name</em></small><br><br>
 Collect interval:<br>
 <input type="text" name="ifx_collect" value="%d"><br>
 <small><em>in seconds, from 0 to 65535</em></small><br><br>
