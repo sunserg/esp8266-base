@@ -282,7 +282,8 @@ class InfluxDBCollector {
                                                                                         // the last '\n'.
             if (statusCode == 204) {
                 telemetryDataSize = 0;
-                syncTime(http->header("date").c_str());
+                int len = http->header("date").length();
+                syncTime( http->header("date").substring(len-29, len).c_str());
                 if (onPushCallback != NULL) {
                     onPushCallback();
                 }
@@ -292,7 +293,7 @@ class InfluxDBCollector {
                 wifi->disconnect();
                 wifi->connect();
             }
-
+            
             return false;
         }
 
