@@ -27,7 +27,7 @@ Password:<br>
 </fieldset>
 )=====";
 
-enum WiFiState {
+enum WiFiStatus {
     CONNECTING,
     CONNECTED,
     DISCONNECTED,
@@ -171,7 +171,7 @@ class WiFiManager {
             WiFi.scanDelete();
         }
 
-        WiFiState state;
+        WiFiStatus state;
         unsigned long lastStateSetAt;
 
         Logger* logger = NULL;
