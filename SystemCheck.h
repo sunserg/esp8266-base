@@ -24,12 +24,12 @@ class SystemCheck {
 
             if (hasTimeoutOccur(lastWebCall, 600)) {
                 logger->log("Reseting based on the lastWebCall timestamp!");
-                ESP.reset();
+//                ESP.reset();
             }
 
             if (hasTimeoutOccur(lastWiFiConnectedState, 120)) {
                 logger->log("Reseting based on the lastWiFiConnectedState timestamp!");
-                ESP.reset();
+                // ESP.reset();
             }
         }
 

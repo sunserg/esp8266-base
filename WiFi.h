@@ -27,7 +27,7 @@ Password:<br>
 </fieldset>
 )=====";
 
-enum WiFiState {
+enum WiFiStatus {
     CONNECTING,
     CONNECTED,
     DISCONNECTED,
@@ -92,6 +92,7 @@ class WiFiManager {
                 return;
             }
             WiFi.mode(WIFI_STA);
+            logger->log("Switching WiFi ON (WIFI_STA)");
             _connect();
         }
 
@@ -102,6 +103,7 @@ class WiFiManager {
             WiFi.mode(WIFI_OFF);
             state = DISCONNECTED;
             lastStateSetAt = millis();
+            logger->log("Switching WiFi OFF (WIFI_OFF)");
         }
 
         bool isConnected() {
@@ -146,7 +148,7 @@ class WiFiManager {
                 }
             }
 
-            logger->log("Hostname is %s", settings->hostname);
+            logger->log("Hostname is: %s", settings->hostname);
 
             if (strongestSSID.compareTo("") != 0) {
                 WiFi.hostname(settings->hostname);
@@ -171,7 +173,7 @@ class WiFiManager {
             WiFi.scanDelete();
         }
 
-        WiFiState state;
+        WiFiStatus state;
         unsigned long lastStateSetAt;
 
         Logger* logger = NULL;
