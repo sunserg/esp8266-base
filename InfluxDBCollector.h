@@ -33,7 +33,7 @@ Push interval:<br>
 
 // Size of the in-memory buffer. The bigger, the better. But consider the available RAM.
 #ifndef TELEMETRY_BUFFER_SIZE
-#define TELEMETRY_BUFFER_SIZE 2 * 1024
+#define TELEMETRY_BUFFER_SIZE 1 * 1024
 #endif
 
 struct InfluxDBCollectorSettings {
